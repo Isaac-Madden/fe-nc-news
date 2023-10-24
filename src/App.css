@@ -5,3 +5,53 @@
   text-align: center;
 }
 
+.ArticleList{
+  border: 1px solid rgb(17, 222, 48);
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.ArticleCard{
+  border: 1px solid red;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 2fr 0.5fr 0.4fr;
+  grid-gap: 40px;
+  grid-template-rows: auto;
+  grid-template-areas: "ArticleCardText ArticleCardImage ArticleCardButton";
+}
+
+ol{
+  list-style-type: none;
+  margin-left: -40px;
+}
+
+.ArticleCard img{
+  height: 20vh;
+  width: auto;
+}
+
+.ArticleCardLink{
+  border-radius: 500px;
+  border: 1px solid transparent;
+  height: 48px;
+  position: relative;
+  top: 30%;
+}
+
+.ListQueries{
+  border: 1px solid blue;
+  padding: 15px;
+  margin-left: 20%;
+  margin-right: 20%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.UserProfile{
+  border: 1px solid rgb(230, 18, 216);
+  margin-left: 20%;
+  margin-right: 20%;
+  text-align: right;
+  padding-right: 20px;
+}
