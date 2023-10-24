@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { ArticleByID } from "../API";
+import { getArticleByID } from "../API";
 import { SingleArticleCard } from "./SingleArticleCard";
 
 export const SingleArticle = () => {
@@ -10,7 +10,7 @@ export const SingleArticle = () => {
 
  useEffect(() => {
     setLoadingStatus(true)
-    ArticleByID(article_id).then(response => {
+    getArticleByID(article_id).then(response => {
     setSingleArticle(response.data.article);
     setLoadingStatus(false);
   });

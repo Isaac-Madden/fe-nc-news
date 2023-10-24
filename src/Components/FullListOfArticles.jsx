@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { AllArticlesAPI } from "./API";
+import { getAllArticles } from "./API";
 import { ArticleCard } from "./ArticleComponents/ArticleCard";
 
 export const ListOfArticles = () => {
@@ -11,7 +11,7 @@ export const ListOfArticles = () => {
     useEffect( () => {
         setLoadingStatus(true)
 
-        AllArticlesAPI().then( response => {
+        getAllArticles().then( response => {
             setArticles(response.data.articles) 
             setLoadingStatus(false)
         }) 

@@ -8,7 +8,7 @@ export const ArticleCard = ({article}) => {
             <p>Author: {article.author}</p>
             <p>Topic: {article.topic}</p>
         </div>
-      <img className="ArticleCardImage" src={article.article_img_url}></img>
+      <img className="ArticleCardImage" alt={article.topic} src={article.article_img_url}></img>
       <nav className="ArticleCardLink"><Link to={`${article.article_id}`}>See Full Article</Link></nav>
      </div>
     )
