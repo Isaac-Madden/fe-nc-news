@@ -10,6 +10,11 @@ export const getArticleByID = (article_id) => {
     .then(response => { return response })
 } 
 
+export const getCommentsByArticleByID = (article_id) => {
+    return axios.get(`https://maddens-news.onrender.com/api/articles/${article_id}/comments`)
+    .then(response => { return response })
+} 
+
 
     /*
     Here's a full list of API calls available:
