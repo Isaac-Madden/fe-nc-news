@@ -62,3 +62,17 @@ ol{
   border-radius: 30px;
   margin: 30px;
 }
+
+.commentComponent{
+  border: 1px solid rgb(14, 197, 38);
+  padding-bottom: 30px;
+  border-radius: 30px;
+  margin: 30px;
+}
+
+.votingComponent{
+  border: 1px solid rgb(46, 168, 225);
+  padding: 10px;
+  border-radius: 30px;
+  margin: 30px;
+}
