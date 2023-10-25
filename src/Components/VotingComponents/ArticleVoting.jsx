@@ -28,12 +28,12 @@ export const ArticleVoting = ({ votes, article_id }) => {
  }
 
  return (
-  <>
+  <div className="votingComponent">
    <div>Votes: {userVotes + votes}</div>
    <button disabled={userVotes === -1} onClick={() => {updateVotes(-1)}}>-</button>
    <button disabled={userVotes === 1} onClick={() => {updateVotes(1)}}>+</button>
 
    {error? <p> Sorry voting is currently unavailable! </p>: <></> }
-  </>
+  </div>
  )
 }
