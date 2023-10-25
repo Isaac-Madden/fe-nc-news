@@ -7,7 +7,6 @@ export const SingleArticleCard = ({singleArticle}) => {
             <p>Date Published: {singleArticle.created_at}</p>
             <p>Body: {singleArticle.body}</p>
             <p>Number of comments: {singleArticle.comment_count}</p>
-            <p>Votes: {singleArticle.votes}</p>
             <img src={singleArticle.article_img_url}></img>
       </>
     )

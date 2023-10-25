@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import { getCommentsByArticleByID } from "../API";
 import { ArticleCommentCard } from "./ArticleCommentCard";
+import { getCommentsByArticleByID } from "../../API";
 
 export const ArticleCommentsList = ({ article_id }) => {
    

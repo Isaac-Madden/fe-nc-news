@@ -1,11 +1,11 @@
-import './App.css'
+import './CSS/App.css'
 
 import { Header } from './Components/Header'
 import { NavigationBar } from './Components/NavigationBar'
 
-import { Home } from './Components/Home'
-import { UserProfile } from './Components/UserProfile'
-import { ListOfArticles } from './Components/FullListOfArticles'
+import { Home } from './Components/HomeComponents/Home'
+import { UserProfile } from './Components/UserProfileComponents/UserProfile'
+import { ListOfArticles } from './Components/ArticleComponents/FullListOfArticles'
 import { SingleArticle } from './Components/ArticleComponents/SingleArticle'
 
 import { Route, Routes } from "react-router-dom";

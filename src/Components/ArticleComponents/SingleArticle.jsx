@@ -1,8 +1,10 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { getArticleByID } from "../API";
 import { SingleArticleCard } from "./SingleArticleCard";
 import { ArticleCommentsList } from "../CommentsComponents/ArticleCommentsList";
+import { ArticleVoting } from "../VotingComponents/ArticleVoting";
+import { getArticleByID } from "../../API";
+
 
 export const SingleArticle = () => {
  const [singleArticle, setSingleArticle] = useState({});
@@ -22,6 +24,7 @@ export const SingleArticle = () => {
  return (
   <>
    <SingleArticleCard singleArticle={singleArticle} />
+   <ArticleVoting votes={singleArticle.votes} article_id={singleArticle.article_id} />
    <ArticleCommentsList article_id={singleArticle.article_id} />
   </>
  )

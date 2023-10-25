@@ -15,6 +15,10 @@ export const getCommentsByArticleByID = (article_id) => {
     .then(response => { return response })
 } 
 
+export const patchArticleVotes = (votes, article_id) => {
+    return axios.patch(`https://maddens-news.onrender.com/api/articles/${article_id}`, { inc_votes: votes })
+    .then(response => { return response })
+}
 
     /*
     Here's a full list of API calls available:
