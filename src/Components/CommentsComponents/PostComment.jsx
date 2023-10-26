@@ -14,10 +14,23 @@ export const PostComment = ({ article_id }) => {
 
     postCommentByArticleID(article_id, commentToPost)
     .then( response => {setCommentLoaded("posted")} )
-    .catch(  error => {setCommentLoaded("error")} )
+    .catch(  error => {
+      console.log(error)
+      setCommentLoaded("error")} )
  }, [commentToPost])
 
-   if (commentLoaded=== "posted") return (<h3>Comment added: {userComment} </h3>)
+   if (commentLoaded=== "posted") return (
+    <>
+    <h3>Comment added!</h3>
+
+    <ol className="commentCard">
+      <li><b>Comment: </b>{userComment}</li>
+      <li><b>Comment author: </b>{userName}</li>
+      <li><b>Comment votes: </b>0</li>
+    </ol> 
+    </>
+   )
+
    if (commentLoaded=== "error") return (<h3>Unable to post a comment at this time</h3>)
 
  return (
