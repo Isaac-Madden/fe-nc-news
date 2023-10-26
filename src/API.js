@@ -5,6 +5,11 @@ export const getAllArticles = () => {
     .then(response => {return response})
 } 
 
+export const getArticlesByTopic = (topic) => {
+    return axios.get(`https://maddens-news.onrender.com/api/articles?topic=${topic}`)
+    .then(response => {return response})
+} 
+
 export const getArticleByID = (article_id) => {
     return axios.get(`https://maddens-news.onrender.com/api/articles/${article_id}`)
     .then(response => { return response })
@@ -31,6 +36,11 @@ export const postCommentByArticleID = (article_id, userComment) => {
     return axios.post(`https://maddens-news.onrender.com/api/articles/${article_id}/comments`, userComment)
     .then(response => { return response })
 }
+
+export const getTopics = () => {
+    return axios.get(`https://maddens-news.onrender.com/api/topics`)
+    .then(response => { return response } )
+} 
 
 
     /*

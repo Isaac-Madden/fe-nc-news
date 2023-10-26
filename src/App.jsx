@@ -9,6 +9,7 @@ import { ListOfArticles } from './Components/ArticleComponents/FullListOfArticle
 import { SingleArticle } from './Components/ArticleComponents/SingleArticle'
 
 import { Route, Routes } from "react-router-dom";
+import { ArticlesByTopic } from './Components/ArticleComponents/ArticlesByTopic'
 
 function App() {
 
@@ -21,6 +22,8 @@ function App() {
     <Route path="/userprofile" element={<UserProfile />} />
     <Route path="/viewarticles" element={<ListOfArticles />} />
     <Route path="/viewarticles/:article_id" element={<SingleArticle />} />
+    <Route path="/viewarticles/topic/:topic_name" element={<ArticlesByTopic />} />
+    <Route path="/viewarticles/topic/:topic_name/:article_id" element={<SingleArticle />} />
     </Routes>
     </>
   )
