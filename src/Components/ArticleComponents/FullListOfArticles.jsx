@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { getAllArticles } from "../../API";
 import { ArticleCard } from "./ArticleCard";
+import { SortingNavBar } from "../SortingComponents/SortingNavBar";
 
 export const ListOfArticles = () => {
 
@@ -21,13 +22,16 @@ export const ListOfArticles = () => {
     if (loadingStatus === true) { return <p> Loading articles... </p>}  // handling delay waiting for data from api
 
     return (
+        <>
+        <SortingNavBar />
         <div className="ArticleList"> 
-        <h2>Heres a list of our articles</h2>
-        <ol>
-            {articles.map( (article) => { 
-                return <li key={article.article_id} > <ArticleCard article={article} /> </li> 
-            } )}
-        </ol>
+            <h2>Heres a list of our articles</h2>
+            <ol>
+                {articles.map( (article) => { 
+                    return <li key={article.article_id} > <ArticleCard article={article} /> </li> 
+                } )}
+            </ol>
         </div>
+        </>
     )
 }
