@@ -7,9 +7,8 @@ Server - Node(v18.17.1), Express, PostgreSQL
 
 Key features:
 
-Links:
-Frontend -
-Backend - 
+Frontend: https://main--papaya-taffy-c0219a.netlify.app/
+Backend: https://maddens-news.onrender.com/api
 
 To run Locally:
 git clone https://github.com/Isaac-Madden/fe-nc-news.git

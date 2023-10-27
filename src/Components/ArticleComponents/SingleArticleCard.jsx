@@ -8,7 +8,7 @@ export const SingleArticleCard = ({singleArticle}) => {
             <p>Date Published: {singleArticle.created_at.slice(8, 10)}{singleArticle.created_at.slice(4, 8)}{singleArticle.created_at.slice(0, 4)}</p> 
             <p>Body: {singleArticle.body}</p>
             <p>Number of comments: {singleArticle.comment_count}</p>
-            <img src={singleArticle.article_img_url}></img>
+            <img className="singleArticleImage" src={singleArticle.article_img_url}></img>
       </>
     )
 }
