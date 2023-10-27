@@ -10,6 +10,10 @@ import { SingleArticle } from './Components/ArticleComponents/SingleArticle'
 
 import { Route, Routes } from "react-router-dom";
 import { ArticlesByTopic } from './Components/ArticleComponents/ArticlesByTopic'
+import { PageNotFound } from './Components/ErrorComponents/PageNotFound'
+import { TopicNotFound } from './Components/ErrorComponents/TopicNotFound'
+
+
 
 function App() {
 
@@ -24,6 +28,8 @@ function App() {
     <Route path="/articles/:article_id" element={<SingleArticle />} />
     <Route path="/articles/topic/:topic_name" element={<ArticlesByTopic />} />
     <Route path="/articles/topic/:topic_name/:article_id" element={<SingleArticle />} />
+    <Route path="/articles/topic/*" element={<TopicNotFound />} />
+    <Route path="*" element={<PageNotFound />} />
     </Routes>
     </>
   )

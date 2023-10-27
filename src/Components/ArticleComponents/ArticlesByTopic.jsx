@@ -5,6 +5,7 @@ import { ArticleCard } from "./ArticleCard";
 
 import { OrderBy } from "../SortingComponents/OrderBy";
 import { SortByComponent } from "../SortingComponents/SortByComponent";
+import { SortingNavBar } from "../SortingComponents/SortingNavBar";
 
 export const ArticlesByTopic = () => {
     const { topic_name } = useParams()
@@ -28,12 +29,13 @@ export const ArticlesByTopic = () => {
         
     }, [articleOrder, sortby])
 
-    if (loadingStatus === true) { return <p> Loading articles... </p>}  // handling delay waiting for data from api
-    if (error === true) { return <p> Sorry, we're currently unable to load articles... </p>}  
+    if (error === true) { return <p> No {topic_name} articles available! </p>}
+    if (loadingStatus === true) { return <p> Loading articles... </p>}  // handling delay waiting for data from api  
     if (articles.length === 0) { return <p> No {topic_name} articles available! </p>}  
 
     return ( 
         <>
+        <SortingNavBar />
         <OrderBy articleOrder={articleOrder} setArticleOrder={setArticleOrder}/>
         <SortByComponent sortBy={sortby} setSortBy={setSortBy}/>
 

@@ -13,6 +13,7 @@ export const PostComment = ({ article_id }) => {
  const [commentLoaded, setCommentLoaded] = useState(false)
  const [postedComment, setPostedComment] = useState({})
  const [deleteStatus, setDeleteStatus] = useState(null);
+ const [loadingDeleteComment, setLoadingDeleteComment] = useState(false);
 
  useEffect(() => {
 
@@ -27,9 +28,12 @@ export const PostComment = ({ article_id }) => {
 
 
  function deleteComment(comment_id) {
+  setLoadingDeleteComment(true)
+
   deleteCommentByCommentID(comment_id)
   .then( () => {
       setDeleteStatus(true)
+      setLoadingDeleteComment(false)
   })
   .catch(error => {
       setDeleteStatus(false)
@@ -37,10 +41,17 @@ export const PostComment = ({ article_id }) => {
   })
 }
 
+  if(loadingDeleteComment === true) return (<p>deleting comment...</p>)
   if(deleteStatus === true) return (<p>comment deleted!</p>)
-  if(deleteStatus === false) return (<p>sorry we're unable to delete this comment, try again later</p>)
-
-   if (commentLoaded=== "posted") return (
+  if(deleteStatus === false && currentUser === null) return (<p>You need to login to delete a comment!</p>)
+  if(deleteStatus === false && currentUser) return (
+    <>
+    <p>Sorry we're unable to delete this comment, try again later</p>
+    <button onClick={ () => deleteComment(postedComment.comment_id)}>Delete Comment</button>
+    </>
+  )
+  
+   if (commentLoaded === "posted") return (
     <>
     <h3>Comment added!</h3>
 
