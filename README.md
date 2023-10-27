@@ -1,8 +1,18 @@
-# React + Vite
+NC News:
+NC News is a react based, front-end application built to interact with a https://github.com/Isaac-Madden/nc-news.git
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Stack:
+Client - React, JS, CSS
+Server - Node(v18.17.1), Express, PostgreSQL
 
-Currently, two official plugins are available:
+Key features:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Links:
+Frontend -
+Backend - 
+
+To run Locally:
+git clone https://github.com/Isaac-Madden/fe-nc-news.git
+cd local repo name
+npm install
+npm run dev 
