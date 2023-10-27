@@ -20,10 +20,10 @@ function App() {
     <Routes>
     <Route path="/" element={<Home />} />
     <Route path="/userprofile" element={<UserProfile />} />
-    <Route path="/viewarticles" element={<ListOfArticles />} />
-    <Route path="/viewarticles/:article_id" element={<SingleArticle />} />
-    <Route path="/viewarticles/topic/:topic_name" element={<ArticlesByTopic />} />
-    <Route path="/viewarticles/topic/:topic_name/:article_id" element={<SingleArticle />} />
+    <Route path="/articles" element={<ListOfArticles />} />
+    <Route path="/articles/:article_id" element={<SingleArticle />} />
+    <Route path="/articles/topic/:topic_name" element={<ArticlesByTopic />} />
+    <Route path="/articles/topic/:topic_name/:article_id" element={<SingleArticle />} />
     </Routes>
     </>
   )

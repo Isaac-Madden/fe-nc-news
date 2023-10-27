@@ -1,33 +1,57 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { postCommentByArticleID } from "../../API";
+import { deleteCommentByCommentID } from "../../API"
+import { User } from "../../Contexts/User";
+
+// delete comment functionality isn't very dry - needs to be refactored at some point - see ArticleCommentCard.jsx
 
 export const PostComment = ({ article_id }) => {
+ const { currentUser } = useContext(User);
 
- const [userName, setUserName] = useState("")
  const [userComment, setUserComment] = useState("")
  const [commentToPost, setCommentToPost] = useState(null)
  const [commentLoaded, setCommentLoaded] = useState(false)
+ const [postedComment, setPostedComment] = useState({})
+ const [deleteStatus, setDeleteStatus] = useState(null);
 
  useEffect(() => {
 
    if (commentToPost === null) {return} // blocks inital call on render
 
     postCommentByArticleID(article_id, commentToPost)
-    .then( response => {setCommentLoaded("posted")} )
-    .catch(  error => {
-      console.log(error)
-      setCommentLoaded("error")} )
+    .then( response => {
+      setPostedComment(response.data.comment_added)
+      setCommentLoaded("posted")} )
+    .catch(  error => { setCommentLoaded("error")} )
  }, [commentToPost])
+
+
+ function deleteComment(comment_id) {
+  deleteCommentByCommentID(comment_id)
+  .then( () => {
+      setDeleteStatus(true)
+  })
+  .catch(error => {
+      setDeleteStatus(false)
+      
+  })
+}
+
+  if(deleteStatus === true) return (<p>comment deleted!</p>)
+  if(deleteStatus === false) return (<p>sorry we're unable to delete this comment, try again later</p>)
 
    if (commentLoaded=== "posted") return (
     <>
     <h3>Comment added!</h3>
 
     <ol className="commentCard">
-      <li><b>Comment: </b>{userComment}</li>
-      <li><b>Comment author: </b>{userName}</li>
-      <li><b>Comment votes: </b>0</li>
+      <li><b>Comment: </b>{postedComment.body}</li>
+      <li><b>Comment author: </b>{postedComment.author}</li>
+      <li><b>Comment votes: </b>{postedComment.votes}</li>
+      <li><b>Comment ID: </b>{postedComment.comment_id}</li>
     </ol> 
+
+    <button onClick={ () => deleteComment(postedComment.comment_id)}>Delete Comment</button>
     </>
    )
 
@@ -36,9 +60,7 @@ export const PostComment = ({ article_id }) => {
  return (
    <div className="commentComponent">
       <h2>Post a comment!</h2>
-      <form onSubmit={ (event)=> {event.preventDefault(); setCommentToPost( {username: userName, body: userComment}  )}}>
-         <label>Name:</label>
-         <input required value={userName} onChange={ event => setUserName(event.target.value) }/>
+      <form onSubmit={ (event)=> {event.preventDefault(); setCommentToPost( {username: currentUser, body: userComment}  )}}>
          <label>Comment:</label>
          <input required value={userComment} onChange={ event => setUserComment(event.target.value) }/>
          <button type="submit">Submit</button>

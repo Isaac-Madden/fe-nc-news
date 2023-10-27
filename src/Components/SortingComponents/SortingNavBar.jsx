@@ -16,10 +16,10 @@ export const SortingNavBar = () => {
     if (loadingStatus === true) { return <p> Loading articles... </p>}  // handling delay waiting for data from api
  
  return (
+  <>
   <nav className="SortingNavBar">
-    
-    {topics.map( (topic) => {return (  <Link to={`topic/${topic.slug}`} key={topic.slug}> {topic.slug} </Link>  )}   )}
-
+    <p>Filter by:</p> {topics.map( (topic) => {return (  <Link to={`topic/${topic.slug}`} key={topic.slug} className="topicsNav"> {topic.slug} </Link>  )}   )}
   </nav>
+  </>
  )
 }

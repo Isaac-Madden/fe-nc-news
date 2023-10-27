@@ -1,12 +1,12 @@
 import axios from "axios";
 
-export const getAllArticles = () => {
-    return axios.get(`https://maddens-news.onrender.com/api/articles`)
+export const getAllArticles = (articleOrder, sortBy) => {
+    return axios.get(`https://maddens-news.onrender.com/api/articles?sort_by=${sortBy}&order=${articleOrder}`)
     .then(response => {return response})
 } 
 
-export const getArticlesByTopic = (topic) => {
-    return axios.get(`https://maddens-news.onrender.com/api/articles?topic=${topic}`)
+export const getArticlesByTopic = (topic, articleOrder, sortby) => {
+    return axios.get(`https://maddens-news.onrender.com/api/articles?topic=${topic}&sort_by=${sortby}&order=${articleOrder}`)
     .then(response => {return response})
 } 
 
@@ -41,6 +41,11 @@ export const getTopics = () => {
     return axios.get(`https://maddens-news.onrender.com/api/topics`)
     .then(response => { return response } )
 } 
+
+export const deleteCommentByCommentID = (comment_id) => {
+    return axios.delete(`https://maddens-news.onrender.com/api/comments/${comment_id}`)
+    .then(response => { return response } ) 
+}
 
 
     /*
