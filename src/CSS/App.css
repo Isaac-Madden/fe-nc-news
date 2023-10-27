@@ -6,19 +6,20 @@
 }
 
 .ArticleList{
-  border: 1px solid rgb(17, 222, 48);
   margin-left: 20%;
   margin-right: 20%;
+
 }
 
 .ArticleCard{
-  border: 1px solid red;
+  border: 1px solid black;
   padding: 20px;
   display: grid;
   grid-template-columns: 2fr 0.5fr 0.4fr;
   grid-gap: 40px;
   grid-template-rows: auto;
   grid-template-areas: "ArticleCardText ArticleCardImage ArticleCardButton";
+  margin: 5px;
 }
 
 ol{
@@ -49,7 +50,6 @@ ol{
 }
 
 .UserProfile{
-  border: 1px solid rgb(230, 18, 216);
   margin-left: 10%;
   margin-right: 10%;
   text-align: right;
@@ -57,51 +57,100 @@ ol{
   text-align: center;
 }
 
+.singleArticleImage{
+  border-radius: 30px;
+}
+
 .commentCard{
-  border: 1px solid rgb(230, 18, 216);
+  border: 1px solid black;
   padding: 30px;
   border-radius: 30px;
   margin: 30px;
 }
 
+.commentCard:hover {
+  background-color: rgb(52, 52, 50);
+  color: white;
+}
+
 .commentComponent{
-  border: 1px solid rgb(14, 197, 38);
+  border: 1px solid black;
   padding-bottom: 30px;
   border-radius: 30px;
   margin: 30px;
 }
 
 .votingComponent{
-  border: 1px solid rgb(46, 168, 225);
-  padding: 10px;
+  padding: 5px;
   border-radius: 30px;
-  margin: 30px;
+  margin: 20px;
+}
+
+.votingButton{
+  padding: 8px;
+  margin: 10px;
+  background-color: white;
 }
 
 .SortingNavBar{
-  border: 1px solid rgb(46, 168, 225);
-  padding: 10px;
+  padding: 2px;
   border-radius: 30px;
-  margin: 30px;
+  margin: 50px;
 }
 
 .topicsNav{
-  border: 1px solid rgb(230, 18, 216);
+  border: 1px solid black;
+  border-radius: 30px;
   padding: 10px;
   text-decoration: none;
   margin: 10px;
+}
+
+.topicsNav:hover {
+  background-color: rgb(52, 52, 50);
+  color: white;
 }
 
 .mainNavBar{
-  border: 1px solid rgb(46, 168, 225);
+  border: 1px solid black;
   padding: 10px;
   border-radius: 30px;
   margin: 30px;
+  box-shadow: 47px 45px 73px 0px rgba(0,0,0,0.1);
+
 }
 
 .mainNavButtons{
-  border: 1px solid rgb(230, 18, 216);
   padding: 10px;
   text-decoration: none;
   margin: 10px;
+  color: black;
+}
+
+.mainNavButtons:hover {
+  background-color: rgb(52, 52, 50);
+  color: white;
+}
+
+.orderButton{
+  padding: 10px;
+  margin: 10px;
+  color: black;
+  border-radius: 30px;
+  background-color: white;
+  border: 1px solid black;
+}
+
+.orderButton:hover {
+  background-color: rgb(52, 52, 50);
+  color: white;
+}
+
+.ArticleCardImage{
+  border-radius: 30px;
+}
+
+.ArticleCardLink{
+  text-decoration: none;
+  color: black;
 }
