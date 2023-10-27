@@ -50,10 +50,11 @@ ol{
 
 .UserProfile{
   border: 1px solid rgb(230, 18, 216);
-  margin-left: 20%;
-  margin-right: 20%;
+  margin-left: 10%;
+  margin-right: 10%;
   text-align: right;
   padding-right: 20px;
+  text-align: center;
 }
 
 .commentCard{
@@ -82,4 +83,25 @@ ol{
   padding: 10px;
   border-radius: 30px;
   margin: 30px;
+}
+
+.topicsNav{
+  border: 1px solid rgb(230, 18, 216);
+  padding: 10px;
+  text-decoration: none;
+  margin: 10px;
+}
+
+.mainNavBar{
+  border: 1px solid rgb(46, 168, 225);
+  padding: 10px;
+  border-radius: 30px;
+  margin: 30px;
+}
+
+.mainNavButtons{
+  border: 1px solid rgb(230, 18, 216);
+  padding: 10px;
+  text-decoration: none;
+  margin: 10px;
 }
