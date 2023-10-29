@@ -15,6 +15,7 @@ export const ListOfArticles = () => {
     const [articleOrder, setArticleOrder] = useState("desc")
     const [sortby, setSortBy] = useState("votes") // shows most popular articles first by default
     const [searchParams, setSearchParams] = useSearchParams() //used to modify the URL for the current location
+    const [firstRender, setFirstRender] = useState(true)
 
     useEffect( () => {
         setLoadingStatus(true)
@@ -42,12 +43,11 @@ export const ListOfArticles = () => {
 
     return (
         <>
-        <FilterByTopic topic={topic} setTopic={setTopic}/>
+        <FilterByTopic topic={topic} setTopic={setTopic} firstRender={firstRender} setFirstRender={setFirstRender}/>
         <OrderBy articleOrder={articleOrder} setArticleOrder={setArticleOrder}/>
         <SortByComponent sortBy={sortby} setSortBy={setSortBy}/>
 
         <div className="ArticleList"> 
-            <h2>Heres a list of our articles</h2>
             <ol>
                 {articles.map( (article) => { 
                     return <li key={article.article_id} > <ArticleCard article={article} /> </li> 
